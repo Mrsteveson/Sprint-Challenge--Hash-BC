@@ -24,11 +24,11 @@ def proof_of_work(last_proof):
     start = timer()
 
     print("Searching for next proof")
-    proof = 72791
+    proof = 7271991
     prev_proof = f'{last_proof}'.encode()
     last_hash = hashlib.sha256(prev_proof).hexdigest()
     while valid_proof(last_hash, proof) is False:
-        proof += 27
+        proof += 72
 
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
